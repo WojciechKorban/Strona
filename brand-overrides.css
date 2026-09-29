@@ -1,0 +1,29 @@
+/* Sprint 1: premium architectural brand layer */
+:root {
+  --ink: #171817;
+  --paper: #f4f1ea;
+  --line: #d7d2c8;
+  --accent: #a6634c;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  color: var(--ink);
+  transform: none;
+}
+
+.site-footer .brand-mark { color: var(--ink); }
+.button-accent { color: var(--paper); }
+.quote { color: var(--paper); }
+.quote em { color: #ead8c8; }
+.eyebrow-dot { background: var(--accent); }
+.service-icon { color: var(--accent); }
+.project-visual { background: #d8c8b7; }
+.tower-two { background: #b9997c; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
