@@ -1,0 +1,48 @@
+/* Sprint 7: static-site contact flow */
+.project-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 55px;
+  max-width: 720px;
+}
+
+.project-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  color: #77756f;
+  font: 10px 'DM Mono', monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.project-form input,
+.project-form select,
+.project-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 15px 14px;
+  background: transparent;
+  color: var(--ink);
+  font: 14px Manrope, sans-serif;
+  letter-spacing: 0;
+  outline: none;
+  transition: border-color .2s, background .2s;
+}
+
+.project-form textarea { resize: vertical; min-height: 130px; }
+.project-form input:focus,
+.project-form select:focus,
+.project-form textarea:focus { border-color: var(--accent); background: rgba(166, 99, 76, .04); }
+.project-form input::placeholder,
+.project-form textarea::placeholder { color: #aaa79f; }
+.form-full { grid-column: 1 / -1; }
+.project-form .button { border: 0; cursor: pointer; justify-self: start; }
+.form-status { grid-column: 1 / -1; min-height: 20px; margin: 0; color: #77756f; font-size: 12px; line-height: 1.5; }
+
+@media (max-width: 800px) {
+  .project-form { grid-template-columns: 1fr; margin-top: 45px; }
+  .form-full { grid-column: auto; }
+}

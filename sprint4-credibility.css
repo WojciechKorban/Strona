@@ -1,0 +1,44 @@
+/* Sprint 4: credibility without invented portfolio entries */
+.process-steps {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 32px;
+  margin-top: 72px;
+  border-top: 1px solid var(--line);
+}
+
+.process-steps article {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 18px;
+  padding: 24px 0 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.process-steps article > span {
+  color: var(--accent);
+  font: 11px 'DM Mono', monospace;
+}
+
+.process-steps h3 {
+  margin: 0 0 10px;
+  font-size: 23px;
+  letter-spacing: -.04em;
+}
+
+.process-steps p {
+  max-width: 290px;
+  margin: 0;
+  color: #686761;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+@media (max-width: 800px) {
+  .process-steps {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+    margin-top: 55px;
+  }
+}

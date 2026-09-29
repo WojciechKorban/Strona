@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#171817"/>
+  <path d="M0 480H1200M0 390H1200M90 0V630M210 0V630M330 0V630M450 0V630M570 0V630M690 0V630M810 0V630M930 0V630M1050 0V630" stroke="#F4F1EA" stroke-opacity=".08"/>
+  <circle cx="970" cy="170" r="170" fill="#A6634C" fill-opacity=".85"/>
+  <path d="M760 630V260L830 190V630H760ZM850 630V170L920 100V630H850ZM940 630V230L1010 160V630H940Z" fill="#F4F1EA" fill-opacity=".9"/>
+  <text x="90" y="150" fill="#C9B99C" font-family="monospace" font-size="20" letter-spacing="5">FULL STACK / JAVA + ANGULAR</text>
+  <text x="90" y="285" fill="#F4F1EA" font-family="Arial, sans-serif" font-size="72" font-weight="700">Korban</text>
+  <text x="90" y="360" fill="#D9B69F" font-family="Georgia, serif" font-size="72" font-style="italic">Development</text>
+  <text x="90" y="500" fill="#F4F1EA" font-family="monospace" font-size="18" letter-spacing="3">APLIKACJE WEBOWE · SYSTEMY BIZNESOWE</text>
+</svg>

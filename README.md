@@ -1,10 +1,10 @@
 # Korban Development
 
-Statyczna strona firmowa przygotowana pod GitHub Pages.
+Strona firmowa Korban Development zbudowana jako statyczny projekt Astro i przygotowana pod GitHub Pages.
 
 ## Uruchomienie lokalne
 
-Otwórz `index.html` w przeglądarce albo uruchom dowolny lokalny serwer, np. `python3 -m http.server 8000`.
+Zainstaluj zależności poleceniem `npm install`, a następnie uruchom `npm run dev`. Produkcyjny build sprawdzisz poleceniem `npm run build`.
 
 ## Publikacja na GitHub Pages
 

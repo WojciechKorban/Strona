@@ -11,6 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="brand-overrides.css" />
+    <link rel="stylesheet" href="sprint2-ux.css" />
+    <link rel="stylesheet" href="sprint4-credibility.css" />
+    <link rel="stylesheet" href="sprint5-design.css" />
+    <link rel="stylesheet" href="sprint7-contact.css" />
   </head>
   <body>
     <header class="site-header" id="top">
@@ -21,14 +25,16 @@
       <nav class="main-nav" aria-label="Główna nawigacja">
         <a href="#o-nas">O mnie</a>
         <a href="#obszary">Usługi</a>
+        <a href="#technologie">Technologie</a>
         <a href="#projekty">Jak pracuję</a>
+        <a href="#inwestycje">Inwestycje</a>
         <a href="#kontakt" class="nav-cta">Porozmawiajmy <span>↗</span></a>
       </nav>
       <button class="menu-toggle" aria-label="Otwórz menu" aria-expanded="false"><span></span><span></span></button>
     </header>
 
     <main>
-      <section class="hero section-grid">
+      <section class="hero section-grid" id="start">
         <div class="hero-copy reveal">
           <p class="eyebrow"><span class="eyebrow-dot"></span> FULL STACK / JAVA + ANGULAR</p>
           <h1>Buduję systemy,<br /><em>które pracują.</em></h1>
@@ -37,6 +43,19 @@
         </div>
         <div class="hero-art reveal reveal-delay" aria-label="Abstrakcyjna ilustracja architektury systemu">
           <div class="sun"></div><div class="arch arch-back"></div><div class="arch arch-front"></div>
+          <div class="code-window">
+            <div class="code-window-bar"><span></span><span></span><span></span><small>system.java</small></div>
+            <pre><code><i>public</i> <b>class</b> Platform {
+  <i>private final</i> ServiceRegistry services;
+
+  <em>@RequestMapping</em>(<u>"/api"</u>)
+  <b>public</b> ResponseEntity&lt;System&gt;
+  buildFor(Business need) {
+    <b>return</b> architecture.solve(need);
+  }
+}</code></pre>
+          </div>
+          <div class="architecture-pulse"><span></span><span></span><span></span></div>
           <div class="art-label">01 / ARCHITEKTURA<br /><b>JAVA<br />SPRING / ANGULAR</b></div>
           <div class="art-line"></div>
         </div>
@@ -58,26 +77,58 @@
       <section class="services" id="obszary">
         <div class="section-grid services-head">
           <div class="section-kicker"><span>02</span><span>USŁUGI</span></div>
-          <div><p class="eyebrow accent">JAVA + ANGULAR</p><h2>Buduję rozwiązania<br />dla <em>realnych potrzeb.</em></h2></div>
+          <div><p class="eyebrow accent">JAVA + ANGULAR</p><h2>Od pomysłu do<br /><em>działającego systemu.</em></h2></div>
         </div>
         <div class="service-list">
           <article class="service-item"><span class="service-number">01</span><h3>Full Stack<br />Java</h3><p>Backend, logika biznesowa i REST API w Javie oraz Springu.</p><span class="service-icon">↗</span></article>
           <article class="service-item"><span class="service-number">02</span><h3>Frontend<br />Angular</h3><p>Czytelne aplikacje webowe, panele i interfejsy dopasowane do użytkowników.</p><span class="service-icon">↗</span></article>
           <article class="service-item"><span class="service-number">03</span><h3>Mikroserwisy<br />i integracje</h3><p>Podział systemu, komunikacja usług i łączenie istniejących rozwiązań.</p><span class="service-icon">↗</span></article>
+          <article class="service-item"><span class="service-number">04</span><h3>Systemy<br />biznesowe</h3><p>Narzędzia dopasowane do procesów firmy, danych i codziennej pracy zespołu.</p><span class="service-icon">↗</span></article>
+          <article class="service-item"><span class="service-number">05</span><h3>Modernizacja<br />oprogramowania</h3><p>Rozwój, refaktoryzacja i bezpieczne porządkowanie istniejących aplikacji.</p><span class="service-icon">↗</span></article>
+        </div>
+      </section>
+
+      <section class="technology-section section-grid" id="technologie">
+        <div class="section-kicker"><span>03</span><span>TECHNOLOGIE</span></div>
+        <div class="technology-content">
+          <p class="eyebrow accent">STACK, KTÓRY ZNAM</p>
+          <h2>Narzędzia dopasowane<br />do <em>problemu.</em></h2>
+          <p>Technologia jest środkiem do celu. Dobieram ją do wymagań systemu, zespołu i dalszego rozwoju produktu — bez komplikowania rozwiązania na siłę.</p>
+          <div class="technology-groups">
+            <div><span>BACKEND</span><b>Java</b><b>Spring</b><b>REST API</b></div>
+            <div><span>FRONTEND</span><b>Angular</b><b>TypeScript</b><b>JavaScript</b></div>
+            <div><span>ARCHITEKTURA</span><b>Mikroserwisy</b><b>Integracje</b><b>Systemy biznesowe</b></div>
+          </div>
         </div>
       </section>
 
       <section class="projects section-grid" id="projekty">
-        <div class="section-kicker"><span>03</span><span>JAK PRACUJĘ</span></div>
+        <div class="section-kicker"><span>04</span><span>JAK PRACUJĘ</span></div>
         <div class="projects-content"><p class="eyebrow accent">OD POMYSŁU DO WDROŻENIA</p><h2>Najpierw rozumiem<br /><em>problem.</em> Potem koduję.</h2><p>Nie publikuję fikcyjnych case studies. Zamiast tego pokazuję jasno, jak pracuję: poznaję potrzeby, porządkuję wymagania, projektuję rozwiązanie i rozwijam je iteracyjnie.</p></div>
         <div class="project-card"><div class="project-visual"><div class="tower tower-one"></div><div class="tower tower-two"></div><div class="tower tower-three"></div><span>ARCHITECTURE<br />API / UI / DATA</span></div><div class="project-meta"><span>01 / ANALIZA → IMPLEMENTACJA</span><a href="mailto:wojciech.korbna@gmail.com">POROZMAWIAJMY →</a></div></div>
+        <div class="process-steps">
+          <article><span>01</span><div><h3>Rozpoznanie</h3><p>Porządkujemy cel, użytkowników, ograniczenia i najważniejsze procesy biznesowe.</p></div></article>
+          <article><span>02</span><div><h3>Architektura</h3><p>Dobieramy podział systemu, sposób komunikacji usług i zakres pierwszej wersji.</p></div></article>
+          <article><span>03</span><div><h3>Implementacja</h3><p>Buduję rozwiązanie iteracyjnie, pokazując postęp i reagując na informację zwrotną.</p></div></article>
+          <article><span>04</span><div><h3>Rozwój</h3><p>Po wdrożeniu system można dalej rozwijać, integrować i usprawniać bez zaczynania od zera.</p></div></article>
+        </div>
       </section>
 
       <section class="quote"><div class="quote-mark">“</div><blockquote>Dobry kod nie kończy się<br />na <em>deployu.</em> Zaczyna<br />pracować dla ludzi.</blockquote><p>— KORBAN DEVELOPMENT</p></section>
 
+      <section class="investment-section section-grid" id="inwestycje">
+        <div class="section-kicker"><span>05</span><span>DRUGI KIERUNEK</span></div>
+        <div class="investment-content">
+          <p class="eyebrow accent">INWESTYCJE DEWELOPERSKIE</p>
+          <h2>Nowy obszar,<br /><em>ten sam sposób myślenia.</em></h2>
+          <p>Rozwijam również działalność deweloperską. To osobny kierunek Korban Development — oparty na długoterminowym podejściu, analizie i odpowiedzialnym budowaniu wartości.</p>
+          <span class="investment-status">OBSZAR W ROZWOJU / WIĘCEJ INFORMACJI WKRÓTCE</span>
+        </div>
+      </section>
+
       <section class="contact section-grid" id="kontakt">
-        <div class="section-kicker"><span>04</span><span>KONTAKT</span></div>
-        <div class="contact-content"><p class="eyebrow accent">ZACZNIJMY ROZMOWĘ</p><h2>Masz system<br /><em>do zbudowania?</em></h2><p>Opisz krótko, czego potrzebujesz. Porozmawiamy o zakresie, architekturze i najlepszym sposobie dojścia do działającego rozwiązania.</p><a class="button button-accent" href="mailto:wojciech.korbna@gmail.com">Napisz: wojciech.korbna@gmail.com <span>↗</span></a></div>
+        <div class="section-kicker"><span>06</span><span>KONTAKT</span></div>
+        <div class="contact-content"><p class="eyebrow accent">ZACZNIJMY ROZMOWĘ</p><h2>Masz system<br /><em>do zbudowania?</em></h2><p>Opisz krótko, czego potrzebujesz. Porozmawiamy o zakresie, architekturze i najlepszym sposobie dojścia do działającego rozwiązania.</p><form class="project-form" id="project-form"><label>Imię lub nazwa firmy<input name="name" type="text" autocomplete="name" required placeholder="Jak możemy się do Ciebie zwracać?" /></label><label>Adres e-mail<input name="email" type="email" autocomplete="email" required placeholder="ty@firma.pl" /></label><label>Rodzaj projektu<select name="projectType" required><option value="" selected disabled>Wybierz obszar</option><option>Aplikacja webowa</option><option>Backend Java / Spring</option><option>Frontend Angular</option><option>Mikroserwisy i integracje</option><option>Modernizacja istniejącego systemu</option><option>Inny temat</option></select></label><label>Budżet / etap projektu<select name="budget"><option value="Nie chcę podawać na tym etapie">Nie chcę podawać na tym etapie</option><option>Analiza i wycena</option><option>Prototyp / MVP</option><option>Rozwój istniejącego systemu</option><option>Stała współpraca</option></select></label><label class="form-full">Opisz krótko potrzeby<textarea name="message" rows="5" required placeholder="Co chcesz zbudować lub poprawić?"></textarea></label><button class="button button-accent" type="submit">Przygotuj wiadomość <span>↗</span></button><p class="form-status" id="form-status" role="status" aria-live="polite"></p></form></div>
         <div class="contact-details"><span>KONTAKT I LOKALIZACJA</span><a href="mailto:wojciech.korbna@gmail.com">wojciech.korbna@gmail.com</a><small>Profil firmy i informacje lokalizacyjne:<br /><a href="https://www.gowork.pl/opinie_czytaj,1027436" target="_blank" rel="noreferrer">GoWork.pl ↗</a></small></div>
       </section>
     </main>
