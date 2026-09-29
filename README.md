@@ -1,6 +1,6 @@
 # Korban Development
 
-Strona firmowa Korban Development zbudowana jako statyczny projekt Astro i przygotowana pod GitHub Pages.
+Strona firmowa Korban Development zbudowana jako statyczny projekt Astro i publikowana przez GitHub Pages pod adresem `https://korban.com.pl`.
 
 ## Uruchomienie lokalne
 

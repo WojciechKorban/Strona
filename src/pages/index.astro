@@ -9,9 +9,8 @@ import '../../mobile.css';
 
 const basePath = import.meta.env.BASE_URL;
 const assetPath = (file: string) => `${basePath.replace(/\/$/, '')}/${file}`;
-const productionPath = '/Strona/';
-const canonicalURL = new URL(productionPath, Astro.site);
-const socialImageURL = new URL(`${productionPath}og-image.png`, Astro.site);
+const canonicalURL = new URL('/', Astro.site);
+const socialImageURL = new URL('/og-image.png', Astro.site);
 const pageTitle = 'Korban Development — Full Stack Java & Angular';
 const pageDescription = 'Aplikacje webowe i systemy biznesowe w technologiach Java, Spring, Angular i mikroserwisach.';
 ---
