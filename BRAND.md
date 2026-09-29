@@ -2,18 +2,31 @@
 
 ## Pozycjonowanie
 
-Korban Development tworzy przemyślane przestrzenie mieszkaniowe i inwestycje, które łączą dobrą architekturę z codziennym komfortem. Marka powinna być odbierana jako spokojna, konkretna i odpowiedzialna — premium bez przesadnego przepychu.
+Korban Development to działalność programistyczna specjalizująca się w tworzeniu aplikacji webowych i systemów biznesowych w technologiach Java, Spring, Angular oraz w architekturze mikroserwisowej. Inwestycje deweloperskie są rozwijanym, dodatkowym kierunkiem działalności.
 
 ## Idea marki
 
-**Przestrzeń, która zostaje na lata.**
+**Buduję systemy, które pracują.**
 
 ## Ton komunikacji
 
 - konkretny, spokojny i profesjonalny,
 - prosty język zamiast branżowego żargonu,
 - pewność bez obietnic, których nie da się potwierdzić,
-- nacisk na jakość, kontekst miejsca i trwałość decyzji.
+- nacisk na jakość kodu, zrozumienie problemu i trwałość rozwiązania,
+- zero fikcyjnych realizacji, statystyk i obietnic bez pokrycia.
+
+## Główna specjalizacja
+
+- Full Stack Java Developer,
+- backend w Javie i Springu,
+- frontend w Angularze,
+- mikroserwisy i integracje systemów,
+- aplikacje webowe i systemy biznesowe.
+
+## Drugi kierunek działalności
+
+Inwestycje deweloperskie są komunikowane jako rozwijany obszar poboczny. Nie dominują strony głównej i nie powinny konkurować z ofertą programistyczną.
 
 ## Paleta kolorów
 
@@ -41,6 +54,7 @@ Plik źródłowy: `brand-mark.svg`.
 ## Zasady
 
 - dużo pustej przestrzeni i wyraźny rytm sekcji,
-- zdjęcia i wizualizacje powinny pokazywać światło, materiały i kontekst miejsca,
-- nie używać sztucznych ocen, statystyk ani nazw inwestycji bez potwierdzonych danych,
-- każdy główny ekran powinien prowadzić do kontaktu lub prezentacji inwestycji.
+- wizualizacje powinny pokazywać interfejsy, przepływ danych i architekturę systemu,
+- nie używać sztucznych ocen, statystyk ani nazw projektów bez potwierdzonych danych,
+- główne CTA prowadzi do kontaktu biznesowego,
+- GoWork jest dodatkowym źródłem informacji o firmie, nie głównym kanałem sprzedaży.
