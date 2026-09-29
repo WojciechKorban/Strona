@@ -3,10 +3,15 @@ import '../../styles.css';
 import '../../brand-overrides.css';
 import '../../sprint2-ux.css';
 import '../../sprint4-credibility.css';
-import '../../sprint5-design.css';
 import '../../sprint7-contact.css';
+import '../../hero-redesign.css';
+import '../../mobile.css';
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const basePath = import.meta.env.BASE_URL;
+const assetPath = (file: string) => `${basePath.replace(/\/$/, '')}/${file}`;
+const productionPath = '/Strona/';
+const canonicalURL = new URL(productionPath, Astro.site);
+const socialImageURL = new URL(`${productionPath}og-image.png`, Astro.site);
 const pageTitle = 'Korban Development — Full Stack Java & Angular';
 const pageDescription = 'Aplikacje webowe i systemy biznesowe w technologiach Java, Spring, Angular i mikroserwisach.';
 ---
@@ -25,18 +30,21 @@ const pageDescription = 'Aplikacje webowe i systemy biznesowe w technologiach Ja
     <meta property="og:description" content={pageDescription} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:site_name" content="Korban Development" />
-    <meta property="og:image" content={new URL('/og-image.svg', Astro.site)} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
-    <meta name="twitter:image" content={new URL('/og-image.svg', Astro.site)} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="twitter:image" content={socialImageURL} />
+    <link rel="icon" type="image/svg+xml" href={assetPath('favicon.svg')} />
     <title>{pageTitle}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Przejdź do treści</a>
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
@@ -48,25 +56,38 @@ const pageDescription = 'Aplikacje webowe i systemy biznesowe w technologiach Ja
       serviceType: ['Full Stack Java Development', 'Angular Development', 'Microservices Architecture']
     })} />
     <header class="site-header" id="top">
-      <a class="brand" href="#top" aria-label="Korban Development — strona główna"><img class="brand-mark" src="/brand-mark.svg" alt="" aria-hidden="true" /><span>Korban<br /><b>Development</b></span></a>
-      <nav class="main-nav" aria-label="Główna nawigacja">
+      <a class="brand" href="#top" aria-label="Korban Development — strona główna"><img class="brand-mark" src={assetPath('brand-mark.svg')} alt="" aria-hidden="true" /><span>Korban<br /><b>Development</b></span></a>
+      <nav class="main-nav" id="main-navigation" aria-label="Główna nawigacja">
         <a href="#o-nas">O mnie</a><a href="#obszary">Usługi</a><a href="#technologie">Technologie</a><a href="#projekty">Jak pracuję</a><a href="#inwestycje">Inwestycje</a><a href="#kontakt" class="nav-cta">Porozmawiajmy <span>↗</span></a>
       </nav>
-      <button class="menu-toggle" aria-label="Otwórz menu" aria-expanded="false"><span></span><span></span></button>
+      <button class="menu-toggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span></button>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero section-grid" id="start">
-        <div class="hero-copy reveal"><p class="eyebrow"><span class="eyebrow-dot"></span> FULL STACK / JAVA + ANGULAR</p><h1>Buduję systemy,<br /><em>które pracują.</em></h1><p class="hero-lead">Projektuję i rozwijam aplikacje webowe oraz systemy biznesowe — od interfejsu w Angularze po backend w Javie i architekturę mikroserwisową.</p><a class="button button-light" href="#obszary">Zobacz usługi <span>↓</span></a></div>
-        <div class="hero-art reveal reveal-delay" aria-label="Abstrakcyjna ilustracja architektury systemu"><div class="sun"></div><div class="arch arch-back"></div><div class="arch arch-front"></div><div class="code-window"><div class="code-window-bar"><span></span><span></span><span></span><small>system.java</small></div><pre><code><i>public</i> <b>class</b> Platform &#123;
-  <i>private final</i> ServiceRegistry services;
-
-  <em>@RequestMapping</em>(<u>"/api"</u>)
-  <b>public</b> ResponseEntity&lt;System&gt;
-  buildFor(Business need) &#123;
-    <b>return</b> architecture.solve(need);
-  &#125;
-&#125;</code></pre></div><div class="architecture-pulse"><span></span><span></span><span></span></div><div class="art-label">01 / ARCHITEKTURA<br /><b>JAVA<br />SPRING / ANGULAR</b></div><div class="art-line"></div></div>
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> FULL STACK JAVA + ANGULAR</p>
+          <h1>Tworzę aplikacje webowe,<br /><em>na których można polegać.</em></h1>
+          <p class="hero-lead">Projektuję i rozwijam systemy biznesowe w technologiach Java, Spring i Angular — od interfejsu po architekturę mikroserwisową.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#kontakt">Porozmawiajmy o projekcie <span>↗</span></a><a class="button button-ghost" href="#obszary">Zobacz usługi <span>↓</span></a></div>
+        </div>
+        <div class="hero-art reveal reveal-delay" aria-label="Diagram architektury aplikacji: Angular, Spring API, mikroserwisy i baza danych">
+          <div class="system-diagram">
+            <div class="diagram-caption"><span>ARCHITEKTURA SYSTEMU</span><small>ONLINE / READY</small></div>
+            <div class="diagram-flow">
+              <div class="diagram-node node-angular"><small>FRONTEND</small><strong>Angular</strong><span>Web application</span></div>
+              <div class="diagram-arrow" aria-hidden="true"><i></i><b>REST</b></div>
+              <div class="diagram-node node-spring"><small>BACKEND</small><strong>Spring API</strong><span>Security · Business logic</span></div>
+              <div class="diagram-arrow" aria-hidden="true"><i></i><b>EVENTS</b></div>
+              <div class="services-cluster">
+                <div class="diagram-node"><small>SERVICE 01</small><strong>Users</strong></div>
+                <div class="diagram-node"><small>SERVICE 02</small><strong>Orders</strong></div>
+                <div class="diagram-node"><small>SERVICE 03</small><strong>Data</strong></div>
+              </div>
+              <div class="diagram-database"><span></span><strong>DATABASE</strong><small>PostgreSQL</small></div>
+            </div>
+          </div>
+        </div>
         <div class="hero-scroll">SCROLL <span>↓</span></div>
       </section>
 
@@ -76,20 +97,34 @@ const pageDescription = 'Aplikacje webowe i systemy biznesowe w technologiach Ja
 
       <section class="technology-section section-grid" id="technologie"><div class="section-kicker"><span>03</span><span>TECHNOLOGIE</span></div><div class="technology-content"><p class="eyebrow accent">STACK, KTÓRY ZNAM</p><h2>Narzędzia dopasowane<br />do <em>problemu.</em></h2><p>Technologia jest środkiem do celu. Dobieram ją do wymagań systemu, zespołu i dalszego rozwoju produktu — bez komplikowania rozwiązania na siłę.</p><div class="technology-groups"><div><span>BACKEND</span><b>Java</b><b>Spring</b><b>REST API</b></div><div><span>FRONTEND</span><b>Angular</b><b>TypeScript</b><b>JavaScript</b></div><div><span>ARCHITEKTURA</span><b>Mikroserwisy</b><b>Integracje</b><b>Systemy biznesowe</b></div></div></div></section>
 
-      <section class="projects section-grid" id="projekty"><div class="section-kicker"><span>04</span><span>JAK PRACUJĘ</span></div><div class="projects-content"><p class="eyebrow accent">OD POMYSŁU DO WDROŻENIA</p><h2>Najpierw rozumiem<br /><em>problem.</em> Potem koduję.</h2><p>Nie publikuję fikcyjnych case studies. Zamiast tego pokazuję jasno, jak pracuję: poznaję potrzeby, porządkuję wymagania, projektuję rozwiązanie i rozwijam je iteracyjnie.</p></div><div class="project-card"><div class="project-visual"><div class="tower tower-one"></div><div class="tower tower-two"></div><div class="tower tower-three"></div><span>ARCHITECTURE<br />API / UI / DATA</span></div><div class="project-meta"><span>01 / ANALIZA → IMPLEMENTACJA</span><a href="mailto:wojciech.korbna@gmail.com">POROZMAWIAJMY →</a></div></div><div class="process-steps"><article><span>01</span><div><h3>Rozpoznanie</h3><p>Porządkujemy cel, użytkowników, ograniczenia i najważniejsze procesy biznesowe.</p></div></article><article><span>02</span><div><h3>Architektura</h3><p>Dobieramy podział systemu, sposób komunikacji usług i zakres pierwszej wersji.</p></div></article><article><span>03</span><div><h3>Implementacja</h3><p>Buduję rozwiązanie iteracyjnie, pokazując postęp i reagując na informację zwrotną.</p></div></article><article><span>04</span><div><h3>Rozwój</h3><p>Po wdrożeniu system można dalej rozwijać, integrować i usprawniać bez zaczynania od zera.</p></div></article></div></section>
+      <section class="projects section-grid" id="projekty"><div class="section-kicker"><span>04</span><span>JAK PRACUJĘ</span></div><div class="projects-content"><p class="eyebrow accent">OD POMYSŁU DO WDROŻENIA</p><h2>Najpierw rozumiem<br /><em>problem.</em> Potem koduję.</h2><p>Każdy projekt zaczynam od poznania celu, procesów biznesowych i ograniczeń technicznych. Następnie porządkuję wymagania, projektuję rozwiązanie i rozwijam je iteracyjnie.</p></div><div class="project-card"><div class="project-visual"><div class="tower tower-one"></div><div class="tower tower-two"></div><div class="tower tower-three"></div><span>ARCHITECTURE<br />API / UI / DATA</span></div><div class="project-meta"><span>01 / ANALIZA → IMPLEMENTACJA</span><a href="mailto:wojciech.korbna@gmail.com">POROZMAWIAJMY →</a></div></div><div class="process-steps"><article><span>01</span><div><h3>Rozpoznanie</h3><p>Porządkujemy cel, użytkowników, ograniczenia i najważniejsze procesy biznesowe.</p></div></article><article><span>02</span><div><h3>Architektura</h3><p>Dobieramy podział systemu, sposób komunikacji usług i zakres pierwszej wersji.</p></div></article><article><span>03</span><div><h3>Implementacja</h3><p>Buduję rozwiązanie iteracyjnie, pokazując postęp i reagując na informację zwrotną.</p></div></article><article><span>04</span><div><h3>Rozwój</h3><p>Po wdrożeniu system można dalej rozwijać, integrować i usprawniać bez zaczynania od zera.</p></div></article></div></section>
 
       <section class="quote"><div class="quote-mark">“</div><blockquote>Dobry kod nie kończy się<br />na <em>deployu.</em> Zaczyna<br />pracować dla ludzi.</blockquote><p>— KORBAN DEVELOPMENT</p></section>
       <section class="investment-section section-grid" id="inwestycje"><div class="section-kicker"><span>05</span><span>DRUGI KIERUNEK</span></div><div class="investment-content"><p class="eyebrow accent">INWESTYCJE DEWELOPERSKIE</p><h2>Nowy obszar,<br /><em>ten sam sposób myślenia.</em></h2><p>Rozwijam również działalność deweloperską. To osobny kierunek Korban Development — oparty na długoterminowym podejściu, analizie i odpowiedzialnym budowaniu wartości.</p><span class="investment-status">OBSZAR W ROZWOJU / WIĘCEJ INFORMACJI WKRÓTCE</span></div></section>
       <section class="contact section-grid" id="kontakt"><div class="section-kicker"><span>06</span><span>KONTAKT</span></div><div class="contact-content"><p class="eyebrow accent">ZACZNIJMY ROZMOWĘ</p><h2>Masz system<br /><em>do zbudowania?</em></h2><p>Opisz krótko, czego potrzebujesz. Porozmawiamy o zakresie, architekturze i najlepszym sposobie dojścia do działającego rozwiązania.</p><form class="project-form" id="project-form"><label>Imię lub nazwa firmy<input name="name" type="text" autocomplete="name" required placeholder="Jak możemy się do Ciebie zwracać?" /></label><label>Adres e-mail<input name="email" type="email" autocomplete="email" required placeholder="ty@firma.pl" /></label><label>Rodzaj projektu<select name="projectType" required><option value="" selected disabled>Wybierz obszar</option><option>Aplikacja webowa</option><option>Backend Java / Spring</option><option>Frontend Angular</option><option>Mikroserwisy i integracje</option><option>Modernizacja istniejącego systemu</option><option>Inny temat</option></select></label><label>Budżet / etap projektu<select name="budget"><option value="Nie chcę podawać na tym etapie">Nie chcę podawać na tym etapie</option><option>Analiza i wycena</option><option>Prototyp / MVP</option><option>Rozwój istniejącego systemu</option><option>Stała współpraca</option></select></label><label class="form-full">Opisz krótko potrzeby<textarea name="message" rows="5" required placeholder="Co chcesz zbudować lub poprawić?"></textarea></label><button class="button button-accent" type="submit">Przygotuj wiadomość <span>↗</span></button><p class="form-status" id="form-status" role="status" aria-live="polite"></p></form></div><div class="contact-details"><span>KONTAKT I LOKALIZACJA</span><a href="mailto:wojciech.korbna@gmail.com">wojciech.korbna@gmail.com</a><small>Profil firmy i informacje lokalizacyjne:<br /><a href="https://www.gowork.pl/opinie_czytaj,1027436" target="_blank" rel="noreferrer">GoWork.pl ↗</a></small></div></section>
     </main>
 
-    <footer class="site-footer"><a class="brand" href="#top"><img class="brand-mark" src="/brand-mark.svg" alt="" aria-hidden="true" /><span>Korban<br /><b>Development</b></span></a><span>© <span id="year"></span> Korban Development</span><a href="#top">DO GÓRY ↑</a></footer>
+    <a class="mobile-contact-bar" href="#kontakt" aria-label="Przejdź do formularza kontaktowego"><span>Masz projekt?</span><b>Napisz <i>→</i></b></a>
+
+    <footer class="site-footer"><a class="brand" href="#top"><img class="brand-mark" src={assetPath('brand-mark.svg')} alt="" aria-hidden="true" /><span>Korban<br /><b>Development</b></span></a><span>© <span id="year"></span> Korban Development</span><a href="#top">DO GÓRY ↑</a></footer>
     <script>
       const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
       const nav = document.querySelector<HTMLElement>('.main-nav');
       if (toggle && nav) {
-        toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
-        document.querySelectorAll('.main-nav a').forEach((link) => link.addEventListener('click', () => nav.classList.remove('open')));
+        const setMenuState = (open: boolean) => {
+          nav.classList.toggle('open', open);
+          document.body.classList.toggle('menu-open', open);
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+        };
+        toggle.addEventListener('click', () => setMenuState(!nav.classList.contains('open')));
+        document.querySelectorAll('.main-nav a').forEach((link) => link.addEventListener('click', () => setMenuState(false)));
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && nav.classList.contains('open')) {
+            setMenuState(false);
+            toggle.focus();
+          }
+        });
       }
       const year = document.querySelector<HTMLElement>('#year');
       if (year) year.textContent = String(new Date().getFullYear());
@@ -104,6 +139,16 @@ const pageDescription = 'Aplikacje webowe i systemy biznesowe w technologiach Ja
         if (formStatus) formStatus.textContent = 'Otwieram program pocztowy z przygotowaną wiadomością.';
         window.location.href = `mailto:wojciech.korbna@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       });
+      const mobileContactBar = document.querySelector<HTMLElement>('.mobile-contact-bar');
+      const hero = document.querySelector<HTMLElement>('.hero');
+      const contact = document.querySelector<HTMLElement>('#kontakt');
+      if (mobileContactBar && hero && contact && 'IntersectionObserver' in window) {
+        let heroVisible = true;
+        let contactVisible = false;
+        const updateContactBar = () => mobileContactBar.classList.toggle('is-visible', !heroVisible && !contactVisible);
+        new IntersectionObserver(([entry]) => { heroVisible = entry.isIntersecting; updateContactBar(); }, { threshold: .08 }).observe(hero);
+        new IntersectionObserver(([entry]) => { contactVisible = entry.isIntersecting; updateContactBar(); }, { threshold: .05 }).observe(contact);
+      }
     </script>
   </body>
 </html>

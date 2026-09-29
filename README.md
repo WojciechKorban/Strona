@@ -4,13 +4,10 @@ Strona firmowa Korban Development zbudowana jako statyczny projekt Astro i przyg
 
 ## Uruchomienie lokalne
 
-Zainstaluj zależności poleceniem `npm install`, a następnie uruchom `npm run dev`. Produkcyjny build sprawdzisz poleceniem `npm run build`.
+Zainstaluj zależności poleceniem `npm install`, a następnie uruchom `npm run dev`. Lokalny adres to `http://localhost:4321/`. Produkcyjny build sprawdzisz poleceniem `npm run build`.
 
 ## Publikacja na GitHub Pages
 
-1. Utwórz repozytorium na GitHubie i wgraj zawartość tego katalogu.
-2. Wejdź w **Settings → Pages**.
-3. Wybierz **Deploy from a branch**, gałąź `main` i folder `/ (root)`.
-4. Zapisz. Po chwili GitHub poda publiczny adres strony.
+Publikację obsługuje workflow `.github/workflows/deploy.yml`. W ustawieniach repozytorium wybierz **Settings → Pages → Source: GitHub Actions**. Po wypchnięciu zmian do `main` workflow sprawdzi projekt, zbuduje Astro i opublikuje katalog `dist`.
 
-Przed publikacją uzupełnij w `index.html` właściwe dane kontaktowe w sekcji „Kontakt”.
+Źródłem strony jest `src/pages/index.astro`. Przed publikacją potwierdź poprawność adresu e-mail w sekcji „Kontakt”.
