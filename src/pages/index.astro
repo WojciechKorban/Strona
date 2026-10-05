@@ -48,9 +48,23 @@ const pageDescription = 'Aplikacje webowe i systemy biznesowe w technologiach Ja
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
       name: 'Korban Development',
+      legalName: 'Usługi Informatyczne Wojciech Korban',
       description: pageDescription,
       email: 'wojciech.korbna@gmail.com',
       url: canonicalURL.toString(),
+      taxID: '9591789572',
+      identifier: {
+        '@type': 'PropertyValue',
+        propertyID: 'REGON',
+        value: '383531516'
+      },
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Działkowa 37',
+        postalCode: '25-626',
+        addressLocality: 'Kielce',
+        addressCountry: 'PL'
+      },
       areaServed: 'PL',
       serviceType: ['Full Stack Java Development', 'Angular Development', 'Microservices Architecture']
     })} />
@@ -101,6 +115,20 @@ const pageDescription = 'Aplikacje webowe i systemy biznesowe w technologiach Ja
       <section class="quote"><div class="quote-mark">“</div><blockquote>Dobry kod nie kończy się<br />na <em>deployu.</em> Zaczyna<br />pracować dla ludzi.</blockquote><p>— KORBAN DEVELOPMENT</p></section>
       <section class="investment-section section-grid" id="inwestycje"><div class="section-kicker"><span>05</span><span>DRUGI KIERUNEK</span></div><div class="investment-content"><p class="eyebrow accent">INWESTYCJE DEWELOPERSKIE</p><h2>Nowy obszar,<br /><em>ten sam sposób myślenia.</em></h2><p>Rozwijam również działalność deweloperską. To osobny kierunek Korban Development — oparty na długoterminowym podejściu, analizie i odpowiedzialnym budowaniu wartości.</p><span class="investment-status">OBSZAR W ROZWOJU / WIĘCEJ INFORMACJI WKRÓTCE</span></div></section>
       <section class="contact section-grid" id="kontakt"><div class="section-kicker"><span>06</span><span>KONTAKT</span></div><div class="contact-content"><p class="eyebrow accent">ZACZNIJMY ROZMOWĘ</p><h2>Masz system<br /><em>do zbudowania?</em></h2><p>Opisz krótko, czego potrzebujesz. Porozmawiamy o zakresie, architekturze i najlepszym sposobie dojścia do działającego rozwiązania.</p><form class="project-form" id="project-form"><label>Imię lub nazwa firmy<input name="name" type="text" autocomplete="name" required placeholder="Jak możemy się do Ciebie zwracać?" /></label><label>Adres e-mail<input name="email" type="email" autocomplete="email" required placeholder="ty@firma.pl" /></label><label>Rodzaj projektu<select name="projectType" required><option value="" selected disabled>Wybierz obszar</option><option>Aplikacja webowa</option><option>Backend Java / Spring</option><option>Frontend Angular</option><option>Mikroserwisy i integracje</option><option>Modernizacja istniejącego systemu</option><option>Inny temat</option></select></label><label>Budżet / etap projektu<select name="budget"><option value="Nie chcę podawać na tym etapie">Nie chcę podawać na tym etapie</option><option>Analiza i wycena</option><option>Prototyp / MVP</option><option>Rozwój istniejącego systemu</option><option>Stała współpraca</option></select></label><label class="form-full">Opisz krótko potrzeby<textarea name="message" rows="5" required placeholder="Co chcesz zbudować lub poprawić?"></textarea></label><button class="button button-accent" type="submit">Przygotuj wiadomość <span>↗</span></button><p class="form-status" id="form-status" role="status" aria-live="polite"></p></form></div><div class="contact-details"><span>KONTAKT I LOKALIZACJA</span><a href="mailto:wojciech.korbna@gmail.com">wojciech.korbna@gmail.com</a><small>Profil firmy i informacje lokalizacyjne:<br /><a href="https://www.gowork.pl/opinie_czytaj,1027436" target="_blank" rel="noreferrer">GoWork.pl ↗</a></small></div></section>
+      <section class="company-data" aria-labelledby="company-data-title">
+        <div>
+          <p class="eyebrow accent">DANE REJESTROWE</p>
+          <h2 id="company-data-title">Informacje o firmie</h2>
+        </div>
+        <dl>
+          <div class="company-name"><dt>Pełna nazwa</dt><dd>Usługi Informatyczne Wojciech Korban</dd></div>
+          <div><dt>NIP</dt><dd>9591789572</dd></div>
+          <div><dt>REGON</dt><dd>383531516</dd></div>
+          <div><dt>Adres</dt><dd>Działkowa 37<br />25-626 Kielce</dd></div>
+          <div><dt>Branża</dt><dd>Oprogramowanie i systemy IT</dd></div>
+          <div><dt>E-mail</dt><dd><a href="mailto:wojciech.korbna@gmail.com">wojciech.korbna@gmail.com</a></dd></div>
+        </dl>
+      </section>
     </main>
 
     <a class="mobile-contact-bar" href="#kontakt" aria-label="Przejdź do formularza kontaktowego"><span>Masz projekt?</span><b>Napisz <i>→</i></b></a>
