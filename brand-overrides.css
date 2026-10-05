@@ -16,9 +16,11 @@
 
 .site-footer .brand-mark { color: var(--ink); }
 .language-switch {
-  display: grid;
-  place-items: center;
-  width: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 76px;
   height: 42px;
   margin-left: clamp(14px, 2vw, 28px);
   border: 1px solid rgba(244, 241, 234, .35);
@@ -28,6 +30,10 @@
   transition: color .2s, background .2s;
 }
 .language-switch:hover { background: var(--paper); color: var(--ink); }
+.language-switch span,
+.language-switch strong { font: inherit; }
+.language-switch .is-current { opacity: .45; }
+.language-switch i { opacity: .35; font-style: normal; }
 .button-accent { color: var(--paper); }
 .quote { color: var(--paper); }
 .quote em { color: #ead8c8; }
