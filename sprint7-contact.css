@@ -79,9 +79,33 @@
 .company-data dd { margin: 0; font-size: 15px; line-height: 1.55; }
 .company-data dd a { border-bottom: 1px solid currentColor; overflow-wrap: anywhere; }
 
+.contact-details .social-links {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0 6px;
+}
+
+.contact-details .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 132px;
+  padding: 13px 15px;
+  border: 1px solid var(--line);
+  font: 11px 'DM Mono', monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transition: color .2s, background .2s;
+}
+
+.contact-details .social-links a:hover { background: var(--ink); color: var(--paper); }
+.contact-details .social-links span { margin-left: 20px; font-size: 15px; }
+
 @media (max-width: 800px) {
   .company-data { grid-template-columns: 1fr; gap: 38px; padding: 64px 20px; }
   .company-data dl { grid-template-columns: 1fr; }
   .company-data .company-name { grid-column: auto; }
   .company-data dl > div:nth-child(even) { padding-left: 0; }
+  .contact-details .social-links { flex-direction: column; }
+  .contact-details .social-links a { width: 100%; }
 }
