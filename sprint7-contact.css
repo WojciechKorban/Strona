@@ -51,7 +51,10 @@
   display: grid;
   grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr);
   gap: 48px;
+  width: 100%;
+  max-width: 100%;
   padding: 72px clamp(24px, 5vw, 80px);
+  overflow: hidden;
   border-top: 1px solid var(--line);
   background: #ebe7de;
 }
@@ -66,9 +69,11 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 0;
   border-top: 1px solid var(--line);
+  min-width: 0;
 }
 
 .company-data dl > div {
+  min-width: 0;
   padding: 20px 0;
   border-bottom: 1px solid var(--line);
 }
@@ -76,12 +81,29 @@
 .company-data dl > div:nth-child(even) { padding-left: 28px; }
 .company-data .company-name { grid-column: 1 / -1; }
 .company-data dt { margin-bottom: 9px; color: #77756f; font: 9px 'DM Mono', monospace; letter-spacing: .13em; text-transform: uppercase; }
-.company-data dd { margin: 0; font-size: 15px; line-height: 1.55; }
+.company-data dd { min-width: 0; margin: 0; font-size: 15px; line-height: 1.55; overflow-wrap: anywhere; }
 .company-data dd a { border-bottom: 1px solid currentColor; overflow-wrap: anywhere; }
+
+.contact-content,
+.contact-details { min-width: 0; }
+
+.contact-details > a {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.contact-details small > a {
+  font: inherit;
+  font-weight: 600;
+  letter-spacing: inherit;
+}
 
 .contact-details .social-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+  width: 100%;
+  max-width: 100%;
   margin: 10px 0 6px;
 }
 
@@ -89,7 +111,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 132px;
+  flex: 0 1 150px;
+  min-width: 0;
   padding: 13px 15px;
   border: 1px solid var(--line);
   font: 11px 'DM Mono', monospace;
@@ -107,5 +130,5 @@
   .company-data .company-name { grid-column: auto; }
   .company-data dl > div:nth-child(even) { padding-left: 0; }
   .contact-details .social-links { flex-direction: column; }
-  .contact-details .social-links a { width: 100%; }
+  .contact-details .social-links a { flex-basis: auto; width: 100%; }
 }

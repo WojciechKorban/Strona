@@ -148,7 +148,7 @@
   .project-form input,
   .project-form select { min-height: 52px; }
   .project-form .button { width: 100%; }
-  .contact-details a { overflow-wrap: anywhere; font-size: 20px; }
+  .contact-details > a { overflow-wrap: anywhere; font-size: 20px; }
 
   .mobile-contact-bar {
     position: fixed;
