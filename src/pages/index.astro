@@ -10,6 +10,7 @@ import '../../mobile.css';
 const basePath = import.meta.env.BASE_URL;
 const assetPath = (file: string) => `${basePath.replace(/\/$/, '')}/${file}`;
 const canonicalURL = new URL('/', Astro.site);
+const englishURL = new URL('/en/', Astro.site);
 const socialImageURL = new URL('/og-image.png', Astro.site);
 const pageTitle = 'Korban Development — Full Stack Java & Angular';
 const pageDescription = 'Aplikacje webowe i systemy biznesowe w technologiach Java, Spring, Angular i mikroserwisach.';
@@ -23,6 +24,9 @@ const pageDescription = 'Aplikacje webowe i systemy biznesowe w technologiach Ja
     <meta name="theme-color" content="#171817" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="pl" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={englishURL} />
+    <link rel="alternate" hreflang="x-default" href={canonicalURL} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pl_PL" />
     <meta property="og:title" content={pageTitle} />
@@ -77,6 +81,7 @@ const pageDescription = 'Aplikacje webowe i systemy biznesowe w technologiach Ja
       <nav class="main-nav" id="main-navigation" aria-label="Główna nawigacja">
         <a href="#o-nas">O mnie</a><a href="#obszary">Usługi</a><a href="#technologie">Technologie</a><a href="#projekty">Jak pracuję</a><a href="#inwestycje">Inwestycje</a><a href="#kontakt" class="nav-cta">Porozmawiajmy <span>↗</span></a>
       </nav>
+      <a class="language-switch" href="/en/" lang="en" hreflang="en" aria-label="English version">EN</a>
       <button class="menu-toggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span></button>
     </header>
 
